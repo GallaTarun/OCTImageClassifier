@@ -1,0 +1,90 @@
+{% extends 'PredictionApp/base.html'%}
+{% load staticfiles %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="../../static/style.css">
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="intro">
+        <center><h2 style="padding-bottom: 2rem;color:tomato;;font-size:50px; font-weight: 900;">About us</h2></center>
+        <table>
+            <tr>
+                <th>Project</th>
+                <td>Retinal Disease Diagnosis (OCT Image Classifier)</td>
+            </tr>
+            <tr>
+                <th>Team Number</th>
+                <td>15B</td>
+            </tr>
+            <tr>
+                <th>Project Guide</th>
+                <td>Dr. G.Jagdish</td>
+            </tr>
+            <tr>
+                <th>Team Members</th>
+                <td>
+                    <ol>
+                        <li>G. Taruneswararao (317126510069) </li>
+                        <li>D. Namratha (317126510066) </li>
+                        <li>P. Manikanta (318126510L14) </li>
+                        <li>P. Gowtham (318126510L22) </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <th>Methodologies Used</th>
+                <td>
+                    <ol>
+                        <li>Deep Learning</li>
+                        <li>Transfer Learning</li>
+                        <li>Data Augmentation</li>
+                        <li>Jinja Templating</li>
+                        <li>Trained model Deployment</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <th>Tools Used</th>
+                <td>
+                    <ol>
+                        <li>HTML, CSS</li>
+                        <li>Python, Django</li>
+                        <li>Tensorflow, Keras</li>
+                        <li>Pandas, Numpy, Matplotlib</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <center>
+        <div class="team-member">
+            <h4>Dr. G. Jagdish (Guide)</h4>
+            <img style="width: 25%;" src="../../static/images/jagdish_sir.jpeg" alt="Error Loading the image :(">
+        </div>
+    </center>
+    <div class="members">
+        
+        <div class="team-member">
+            <h4>G. Taruneswararao</h4>
+            <img src="../../static/images/tarun_img.jpg" alt="Error Loading the image :(">
+            <h4>317126510069</h4>
+        </div>
+        <div class="team-member">
+            <h4>D. Namratha</h4>
+            <img src="../../static/images/namratha_img.jpeg" alt="Error Loading the image :(">
+            <h4>317126510066</h4>
+        </div>
+        <div class="team-member">
+            <h4>P. Manikanta</h4>
+            <img src="../../static/images/manikanta_img.jpeg" alt="Error Loading the image :(">
+            <h4>318126510L14</h4>
+        </div>
+        <div class="team-member" style="margin-bottom: 3rem;">
+            <h4>P. Gowtham</h4>
+            <img src="../../static/images/gowtham_img.jpeg" alt="Error Loading the image :(">
+            <h4>318126510L22</h4>
+        </div>
+    </div>
+{% endblock %}

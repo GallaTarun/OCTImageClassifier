@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=”utf-8″>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    {% block head_block %}
+    {% endblock %}
+</head>
+<body>
+    <nav style="margin-bottom:3rem;">
+        <center>
+            <ul>
+                <li class="nav-item"><a href="{% url 'prediction_app:index' %}"><h5>Home</h5></a></li>
+                <li class="nav-item"><a href="{% url 'prediction_app:architecture' %}"><h5>Model</h5></a></li>
+                 <li class="nav-item"><a href="{% url 'prediction_app:about_us' %}"><h5>About us</h5></a></li> 
+            </ul>
+        </center>
+    </nav>
+    <div class="container">
+        {% block body_block %}
+        {% endblock %}
+    </div>
+</body>
+</html>

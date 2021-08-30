@@ -1,0 +1,48 @@
+{% extends 'PredictionApp/base.html'%}
+{% load staticfiles %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="../static/style.css">
+{% endblock %}
+
+{% block body_block %}
+    <div class="first" style="margin-top: 10rem; height: auto;font-size: larger;">
+        <h4>Note </h4>
+        <p>
+            The probabilities that are displayed in the below table are rounded off to two decimal places.
+            So the zero probability doesn't mean the probability is exactly zero.
+            It is closest to zero.
+        </p>
+    </div>
+    <hr>
+    <div class="second result-div">
+        <h3 style="font-size: xx-large; color: tomato; font-weight: 600;">Prediction Probabilities</h3>
+        <center>
+            <table style="margin: 2rem;">
+                <tr>
+                    <th style="border: 3px solid springgreen;">Disease</th>
+                    <th>Probability(Chance) (Range 0-1) </th>
+                </tr>
+                <tr>
+                    <th>CNV</th>
+                    <td class="preds"><h2>{{ prediction.0 }} </h2></td>
+                </tr>
+                <tr>
+                    <th>DME</th>
+                    <td class="preds"><h2>{{prediction.1}} </h2></td>
+                </tr>
+                <tr>
+                    <th>DRUSEN</th>
+                    <td class="preds"><h2>{{prediction.2}} </h2></td>
+                </tr>
+                <tr>
+                    <th>NORMAL</th>
+                    <td class="preds"><h2>{{prediction.3}} </h2></td>
+                </tr>
+            </table>
+        </center>
+        <center>
+            <div style="margin-bottom:2rem;padding: 2rem; color: aqua; font-size: xx-large; display: inline;">Our model predicted the given OCT image is <span style="color: burlywood;">{{ acc }}%</span> likely to be <span style="color: burlywood;">{{label}}.</span></div>
+        </center>
+    </div>
+{% endblock %}

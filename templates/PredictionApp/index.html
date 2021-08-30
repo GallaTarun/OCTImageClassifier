@@ -1,0 +1,91 @@
+{% extends 'PredictionApp/base.html'%}
+{% load staticfiles %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="static/style.css">
+{% endblock %}
+
+{% block body_block %}
+    <div class="project-intro">
+        <center><h2 style="padding-bottom: 2rem;color:tomato;;font-size:50px; font-weight: 900;">Retinal Disease Diagnosis</h2></center>
+        <p>This website is powered by DJANGO Framework. A Deep Learning model is trained on a dataset containing nearly
+            85,000 Optical Coherence Tomography(OCT) images of Retina. The trained model is VGG-16
+            which is considered one of the best among the existing Convolutional Neural Networks pre-defined in the KERAS-API.
+            It is trained on IMAGENET dataset. Using Transfer Learning technique, the pre-trained weights are assigned to our 
+            current deep learning model. Now, the current model is capable of diagnosing the Retinal Disease given the OCT image of the retina. 
+        </p>
+        <p style="margin: 2rem; ">
+            The model is capable of predicting the given input OCT image into one of following categories.
+            <ul class="disease-list">
+                <li>CHOROIDAL NEOVASCULARIZATION</li>
+                <li>DIABETIC MACULAR EDEMA</li>
+                <li>DRUSEN</li>
+                <li>NORMAL</li>
+            </ul>
+        </p>
+    </div>
+
+    <h3 style="font-size: xx-large; color: rgb(235, 82, 82); font-weight: 600;">Retinal Diseases</h3>
+    <div class="diseases">
+        <div class="card">
+            <h4>CNV</h4>
+            <img src="../../static/images/cnv.jpeg" alt="Can't load the image :(">
+        </div>
+        <div class="card">
+            <h4>DME</h4>
+            <img src="../../static/images/dme.jpeg" alt="Can't load the image :(">
+        </div>
+        <div class="card">
+            <h4>DRUSEN</h4>
+            <img src="../../static/images/drusen.jpeg" alt="Can't load the image :(">
+        </div>
+        <div class="card">
+            <h4>NORMAL</h4>
+            <img src="../../static/images/normal.jpeg" alt="Can't load the image :(">
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="first">
+            <table>
+                <tr>
+                    <th>CNV</th>
+                    <td>
+                        Choroidal NeoVascularization is the formation of new blood vessels in the choroid layer of the eye. 
+                        It is caused by the cracks within the macular tissue of the retina.
+                        It can cause sudden deterioriation of the central vision.
+                    </td>
+                </td>
+                <tr>
+                    <th>DME</th>
+                    <td>
+                        The blood vessels in the back of the eye swell, weaken and leak.
+                        This occurs in a part of the retina called the macula.
+                        Diabetic Macular Edema can cause too much fluid to build up in the macula, which can lead to vision changes if left untreated.
+                    </td>
+                </tr>
+                <tr>
+                    <th>DRUSEN</th>
+                    <td>
+                        Drusen are small yellow deposits of fatty proteins(lipids) that accumulate under the retina.
+                        It also leads to damage in central vision of the eye.
+                    </td>
+                </tr>
+                <tr>
+                    <th>NORMAL RETINA</th>
+                    <td>A normal and healthy retina with no issues.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="second">
+            <form method="POST" action="{% url 'prediction_app:predict' %}" required="true">
+                {% csrf_token %}
+                {{ form }}
+                <input class="button" type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
